@@ -34,7 +34,7 @@ public class InternalCallV2Test {
     void externalCallV2() {
         callService.external();
     }
-
+    
 
     @Slf4j
     @RequiredArgsConstructor
