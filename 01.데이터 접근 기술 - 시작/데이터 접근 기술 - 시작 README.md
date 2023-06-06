@@ -99,27 +99,23 @@ public class Item {
 **ItemRepository 인터페이스**
 
 ```java
-package hello.itemservice.domain;
+package hello.itemservice.repository;
 
-import lombok.Data;
+import hello.itemservice.domain.Item;
 
-@Data
-public class Item {
+import java.util.List;
+import java.util.Optional;
 
-    private Long id;
+public interface ItemRepository {
 
-    private String itemName;
-    private Integer price;
-    private Integer quantity;
+    Item save(Item item);
 
-    public Item() {
-    }
+    void update(Long itemId, ItemUpdateDto updateParam);
 
-    public Item(String itemName, Integer price, Integer quantity) {
-        this.itemName = itemName;
-        this.price = price;
-        this.quantity = quantity;
-    }
+    Optional<Item> findById(Long id);
+
+    List<Item> findAll(ItemSearchCond cond);
+
 }
 ```
 
